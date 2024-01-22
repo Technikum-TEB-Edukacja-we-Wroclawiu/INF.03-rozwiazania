@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firma IT</title>
+    <link rel="stylesheet" href="styl.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <script>
+        function handleClick() {
+            let firstName = document.getElementById('first_name').value.toUpperCase();
+            let lastName = document.getElementById('last_name').value.toUpperCase();
+            let question = document.getElementById('question').value;
+            let regulationsChecked = document.getElementById('regulations').checked;
+            let status = document.getElementById('status');
+
+            if(!regulationsChecked) {
+                status.innerHTML = `<span style="color: red;">Musisz zapoznać się z regulaminem</span>`;
+            } else {
+                status.innerHTML = `${firstName} ${lastName}<br>Treść Twojej sprawy: ${question}`;
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <div class="site">
+      <nav class="banner">
+        <section class="logo"><img src="logo.png" alt="firma it"></section>
+        <section class="menu">
+            <a href="index.html">Strona Główna</a>
+            <a href="uslugi.html">Usługi</a>
+            <a href="kontakt.html">Kontakt</a>
+        </section>
+      </nav>
+      <header>
+        <img src="animacja.gif" alt="Usługi informatyczne">
+      </header>
+      <main>
+        <h2>Kontakt</h2>
+        <!-- INFO: Użycie labelek nie jest obowiązkowe w tym zadaniu. -->
+        <table>
+            <tr>
+                <td><label for="first_name">Imię:</label></td>
+                <td><input type="text" id="first_name"></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Nazwisko:</label></td>
+                <td><input type="text" id="last_name"></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail:</label></td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td><label for="question">Zgłoszenie:</label></td>
+                <td><textarea id="question" cols="40" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" id="regulations"> <label for="regulations">Zapoznałem/am się z regulaminem</label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="reset">Reset</button> <button onclick="handleClick()">Prześlij</button></td>
+            </tr>
+        </table>
+        <hr>
+        <p id="status"></p>
+      </main>
+      <footer>Autor strony: <em>123456789112</em></footer>
+    </div>
+  </body>
+</html>
