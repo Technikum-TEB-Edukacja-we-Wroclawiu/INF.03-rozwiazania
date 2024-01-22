@@ -1,0 +1,20 @@
+-- zapytanie 1
+SELECT DISTINCT wpis
+FROM zadania
+WHERE dataZadania BETWEEN '2020-07-01' AND '2020-07-07'
+	AND wpis <> '';
+
+-- zapytanie 2
+SELECT dataZadania, wpis
+FROM zadania
+WHERE miesiac = 'lipiec';
+
+-- zapytanie 3
+SELECT miesiac, wpis
+FROM zadania
+WHERE wpis LIKE 'S%';
+
+-- zapytanie 4
+UPDATE zadania
+SET wpis = 'Wycieczka nad morze'
+WHERE dataZadania = '2020-07-18';
