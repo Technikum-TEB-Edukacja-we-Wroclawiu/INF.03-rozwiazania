@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Komputery</title>
+    <link rel="stylesheet" href="styl.css" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <script>
+      function handleClick() {
+        let name = document.getElementById("name").value;
+        let surname = document.getElementById("surname").value;
+        let email = document.getElementById("email").value;
+        let service = document.getElementById("service").value;
+
+        let status = document.getElementById('status');
+        status.innerHTML = `${name} ${surname}<br>${email.toLowerCase()}<br>Usługa: ${service}`;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="site">
+      <header>
+        <img src="animacja.gif" alt="Pogotowie komputerowe" />
+      </header>
+      <nav>
+        <a href="index.html">Strona Główna</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <main>
+        <div class="left"></div>
+        <div class="center">
+          <h2>Kontakt</h2>
+          <form>
+            <!-- INFO: Użycie labelek nie jest wymagane w tym zadaniu. -->
+            <table>
+              <tr>
+                <td><label for="name">Imię: </label></td>
+                <td><input type="text" id="name" /></td>
+              </tr>
+              <tr>
+                <td><label for="surname">Nazwisko: </label></td>
+                <td><input type="text" id="surname" /></td>
+              </tr>
+              <tr>
+                <td><label for="email">E-mail: </label></td>
+                <td><input type="email" id="email" /></td>
+              </tr>
+              <tr>
+                <td><label for="service">Zgłoszenie: </label></td>
+                <td>
+                  <select id="service">
+                    <option value="naprawa komputerów">
+                      naprawa komputerów
+                    </option>
+                    <option value="odzyskiwanie danych">
+                      odzyskiwanie danych
+                    </option>
+                    <option value="wirusy">wirusy</option>
+                    <option value="konfiguracja LAN">konfiguracja LAN</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <input type="checkbox" id="message_copy" checked />
+                  <label for="message_copy">Wyślij kopię wiadomości</label>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <button type="reset">Czyść</button>
+                  <button type="button" onclick="handleClick()">Wyślij</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+          <hr>
+          <p id="status"></p>
+        </div>
+        <div class="right"></div>
+      </main>
+      <footer>Autor: <em>123456789112</em></footer>
+    </div>
+  </body>
+</html>
